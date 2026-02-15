@@ -49,4 +49,27 @@ return {
       col = 1,
     },
   },
+  keys = {
+    {
+      "<leader>gp",
+      mode = "n",
+      function()
+        require("gitsigns").preview_hunk()
+      end,
+    },
+    {
+      "]g",
+      mode = "n",
+      function()
+        require("gitsigns").nav_hunk("next", { wrap = false, foldopen = true, target = "unstaged" })
+      end,
+    },
+    {
+      "[g",
+      mode = "n",
+      function()
+        require("gitsigns").nav_hunk("prev", { wrap = false, foldopen = true, target = "unstaged" })
+      end,
+    },
+  },
 }

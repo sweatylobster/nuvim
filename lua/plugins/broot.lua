@@ -6,8 +6,14 @@ return {
         "~/.config/broot/nvim.toml",
       },
     })
-    vim.keymap.set("n", "<leader>br", function()
-      require("broot").broot()
-    end)
   end,
+  keys = {
+    {
+      "<leader>br",
+      mode = "n",
+      function()
+        require("broot").broot()
+      end,
+    },
+  },
 }

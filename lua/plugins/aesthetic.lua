@@ -12,8 +12,24 @@ return {
     "xiyaowong/transparent.nvim",
     lazy = false,
     priority = 999,
+    config = function() end,
+    keys = {
+      { "<leader>bg", mode = "n", ":TransparentToggle<CR>" },
+    },
+  },
+  {
+    "asiryk/auto-hlsearch.nvim",
+  },
+  {
+    "norcalli/nvim-colorizer.lua",
     config = function()
-      vim.keymap.set("n", "<leader>bg", "TransparentToggle<CR>", {})
+      require("colorizer").setup()
+    end,
+  },
+  {
+    "folke/todo-comments.nvim",
+    config = function()
+      require("todo-comments").setup()
     end,
   },
 }
