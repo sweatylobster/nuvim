@@ -19,7 +19,16 @@ return {
       semanticTokens = "disable",
     }
 
-    vim.lsp.enable({ "c-language-server", "bashls", "lua_ls", "tinymist", "rust_analyzer", "ols" })
+    vim.lsp.enable({
+      "basedpyright",
+      "bashls",
+      "c-language-server",
+      "lua_ls",
+      "ols",
+      "ruff",
+      "rust_analyzer",
+      "tinymist",
+    })
 
     vim.lsp.inlay_hint.enable = true
 
