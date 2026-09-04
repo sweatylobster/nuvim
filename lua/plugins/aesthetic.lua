@@ -21,12 +21,6 @@ return {
     "asiryk/auto-hlsearch.nvim",
   },
   {
-    "norcalli/nvim-colorizer.lua",
-    config = function()
-      require("colorizer").setup()
-    end,
-  },
-  {
     "folke/todo-comments.nvim",
     config = function()
       require("todo-comments").setup()
