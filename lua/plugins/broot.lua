@@ -1,18 +1,13 @@
 return {
-  "9999years/broot.nvim",
-  config = function()
-    require("broot").setup({
-      config_files = {
-        "~/.config/broot/nvim.toml",
-      },
-    })
-  end,
+  "aohoyd/broot.nvim",
+  lazy = false,
+  opts = {},
   keys = {
     {
-      "<leader>br",
+      "<leader>e",
       mode = "n",
       function()
-        require("broot").broot()
+        vim.cmd([[Broot]])
       end,
     },
   },
