@@ -20,7 +20,6 @@ return {
     }
 
     vim.lsp.enable({
-      "basedpyright",
       "bashls",
       "c-language-server",
       "lua_ls",
@@ -28,6 +27,7 @@ return {
       "ruff",
       "rust_analyzer",
       "tinymist",
+      "ty",
     })
 
     vim.lsp.inlay_hint.enable = true
