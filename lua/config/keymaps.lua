@@ -50,6 +50,26 @@ keymap("n", "J", "mzJ`z", opts)
 keymap("n", "<C-u>", "<C-u>zz", opts)
 keymap("n", "<C-d>", "<C-d>zz", opts)
 
+keymap("n", "<leader>gb", function()
+  -- Prompt to make a nice-looking banner (ty lung)
+  vim.ui.input({ prompt = "", scope = "buffer" }, function(input)
+    local length = 60 -- looks nice
+
+    -- Get the comment for the buffer, since {} defaults to `local`
+    local cmt = vim.api.nvim_get_option_value("commentstring", {}) or "--"
+    local t = "[" .. input .. "] " -- encloses
+
+    local lhs = string.format(cmt, t) -- starts the line off
+    local fill = cmt:match("."):rep(length - vim.fn.strcharlen(lhs)) -- fills it :)
+    local line = lhs .. fill
+    local col = line:find("%[")
+
+    local pos = vim.api.nvim_win_get_cursor(0) -- remembers where we were
+    vim.api.nvim_buf_set_lines(0, pos[1] - 1, pos[1] - 1, false, { line })
+    vim.api.nvim_win_set_cursor(0, { pos[1], col }) -- takes us to msg
+  end)
+end, {})
+
 -- INSERT MODE
 --
 
